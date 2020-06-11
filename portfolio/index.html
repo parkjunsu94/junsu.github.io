@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+
+    <meta charset="utf-8">
+    <title>ParkJunSu PORTFOLIO</title>
+
+    <link rel="shortcut icon" href="./img/favicon.ico"><!-- 파비콘 -->
+    <link rel="stylesheet" type="text/css" href="./XEIcon-2.2.0/xeicon.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/jquery.fullPage.css" />
+    <link rel="stylesheet" type="text/css" href="./css/examples.css" />
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="./js/jquery-1.12.4.min.js"></script>
+    <script src="./js/jquery-ui-1.12.0.custom.min.js"></script>
+    <script src="./js/jquery.fullPage.js"></script>
+    <script src="./js/jquery.mixitup.min.js"></script>
+    <script src="./js/mixFilter.js"></script>
+    <script src="./js/modernizr.custom.min.js"></script>
+    <script src="prefixfree.min.js"></script>
+
+    <script src="./js/chart.js"></script>
+    <script src="./js/menu.js"></script>
+    <script src="./js/park.js"></script>
+    <script>
+        $(document).ready(function() {
+            var wd = parseInt($(window).width());
+            if (wd >= 770) {
+                $('#fullpage').fullpage({
+                    sectionsColor: ['#50acdb', '#50acdb', '#50acdb', '#50acdb', '#50acdb'],
+                    anchors: ['firstPage', 'secondPage', '3rdPage', '4thPage', 'lastPage'],
+                    menu: '#menu',
+                    afterLoad: function(anchorLink, index) {
+                        //section 2
+                        if (index == 2) {
+                            //moving the image
+                            $('#section1').find('.occupy').delay(1000).animate({
+                                left: '0%'
+                            }, 2500, 'easeOutExpo');
+
+
+
+                        }
+
+                        //section 3
+                        if (anchorLink == '4thPage') {
+                            //moving the image
+                            $('#section3').find('.intro').delay(0).animate({
+                                left: '0%'
+                            }, 500, 'easeOutExpo');
+                        }
+                    }
+                });
+            }
+            /* 아래 mixitup */
+            var $btns = $('.btn').click(function() {
+                if (this.id == 'all') {
+                    $('#parent > div').fadeIn(450);
+                } else {
+                    var $el = $('.' + this.id).fadeIn(450);
+                    $('#parent > div').not($el).hide();
+                }
+                $btns.removeClass('active');
+                $(this).addClass('active');
+            });
+
+            document.getElementById("page3_img1").onclick = function() {
+             window.open("about:blank").location.href="../r3/index.html"
+     }
+            document.getElementById("page3_img2").onclick = function() {
+             window.open("about:blank").location.href="../r2/index.html"
+     }
+            document.getElementById("page3_img3").onclick = function() {
+             window.open("about:blank").location.href="../r1/index.html"
+     }
+            document.getElementById("page3_img4").onclick = function() {
+             window.open("about:blank").location.href="../d1/index.html"
+     }
+            document.getElementById("page3_img5").onclick = function() {
+             window.open("about:blank").location.href="../m1/index.html"
+     }
+            
+        });
+        
+    </script>
+
+    <style>
+        #section2 img {
+            left: 130%;
+            position: relative;
+        }
+
+        #section2 p {
+            display: none;
+        }
+
+        #section3 .intro {
+            left: -130%;
+            position: relative;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="menubox">
+        <ul id="menu">
+            <li data-menuanchor="firstPage"><a href="#firstPage" onfocus="this.blur();">INTRO</a>
+            <li data-menuanchor="secondPage"><a href="#secondPage" onfocus="this.blur();">ABOUT </a></li>
+            <li data-menuanchor="3rdPage"><a href="#3rdPage" onfocus="this.blur();">PORTFOLIO</a></li>
+            <li data-menuanchor="4thPage"><a href="#4thPage" onfocus="this.blur();">CONTACT</a></li>
+        </ul>
+    </div>
+    <div id="fullpage">
+        <div class="section" id="section0">
+            <div id="logoimg"><a href="index.html"><img src="img/logo.png" width="110" height="auto" alt="로고이미지"></a></div>
+            <h1>Welcome to JunSu`s Park</h1>
+            <h6>WEB DESIGNER & WEB PUBLISHER PORTFOLIO</h6>
+            <img class="park" src="./img/nature.png" alt="공원이미지">
+            <img class="park2" src="./img/nature2.png" alt="땅이미지">
+            <img class="cloud1" src="./img/cloud.png" alt="구름1">
+            <img class="cloud2" src="./img/cloud.png" alt="구름2">
+            <img class="cloud3" src="./img/cloud.png" alt="구름3">
+            <span>Hello~!@</span>
+            <img class="cloud4" src="./img/cloud.png" alt="구름4">
+            <div id="scroll">
+                <img src="img/scrolldown.gif" alt="scroll down">
+                <h5>scroll down</h5>
+            </div>
+        </div>
+        <!--↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓page2↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓---->
+        <div class="section" id="section1">
+            <div class="sec1Wrap">
+                <div class="education">
+                    <h3 id="header">EDUCATION</h3>
+                    <p><span>2019.11 - 2020.05</span> &emsp;&emsp;웹디자인(UI/UX 반응형웹) 취업과정 수료예정 [ 그린컴퓨터 아카데미 ]</p>
+                    <p><span>2013.03 - 2017.02</span> &emsp;&emsp;순천제일대학교 전자정보통신과 졸업</p>
+                    <p><span>2010.03 - 2013.02</span> &emsp;&emsp;순천팔마고등학교 졸업</p>
+                </div>
+                <div class="myimg">
+                    <img src="./img/myimg.jpg" alt="내사진">
+                    <p class="name">PARK&emsp;JUN&emsp;SU</p>
+                    <p class="tel">Phone&emsp;&ensp;010 - 3100 - 5310</p>
+                    <p class="age">Age&emsp;&emsp;&ensp;1994. 07. 14</p>
+                </div>
+                <div class="license">
+                    <h3 id="header">LICENSE</h3>
+                    <p><span>2020.04</span> &emsp;&emsp;웹디자인기능사</p>
+                    <p><span>2013.06</span> &emsp;&emsp;MOS Office Excel® 2007 Expert</p>
+                    <p><span>2013.04</span> &emsp;&emsp;MOS PowerPoint 2007</p>
+                    <p><span>2012.12</span> &emsp;&emsp;자동차운전면허증 1종</p>
+                </div>
+                <div class="aboutme">
+                    <h3 id="header">VISION</h3>
+                    <p>'인생이란 가까이서 보면 비극이고, 멀리서 보면 희극이다.'<br>사람들이 무심코 지나가는 웹페이지들은 디자이너와 개발자가 공들여 만들어놓은 것입니다.<br>쉬운 게 하나 없고 어렵더라도 자신이 만들어가는 것이라고 생각합니다.<br>발전할 기회가 주어진다면 어제보다 나은 제가 되겠습니다.</p>
+                </div>
+                <div class="skills">
+                    <h3 class="title">SKILLS</h3>
+                    <div class="skill">
+                        <div id="ai">
+                            <p>Illustrator</p>
+                            <div class="bar">
+                                <div class="fullbar">
+                                    <div class="occupy"><span>70%</span></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="ps">
+                            <p>Photoshop</p>
+                            <div class="bar">
+                                <div class="fullbar">
+                                    <div class="occupy"><span>70%</span></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="ht">
+                            <p>HTML / CSS</p>
+                            <div class="bar">
+                                <div class="fullbar">
+                                    <div class="occupy"><span>80%</span></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="jq">
+                            <p>JQuery</p>
+                            <div class="bar">
+                                <div class="fullbar">
+                                    <div class="occupy"><span>60%</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> <!-- skill  -->
+                </div>
+            </div>
+            <img class="cloud" src="./img/cloud.png" alt="구름이미지">
+            <img class="cloud2" src="./img/cloud.png" alt="구름이미지">
+        </div>
+        <!-----↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓page3↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓----->
+        <div class="section" id="section2">
+            <div class="sec2Wrap">
+                <button class="active btn" id="all">All</button>
+                <button class="btn" id="a">Responsive</button>
+                <button class="btn" id="b">Web</button>
+                <button class="btn" id="c">Mobile</button>
+                <span>* 1920x1080 size에 최적화돼 있습니다.</span>
+                <div class="spacer"></div>
+                <div id="parent">
+                    <div class="box a" id="page3_img1" style="cursor:pointer;">Responsive1</div>
+                    <div class="box a" id="page3_img2" style="cursor:pointer;">Responsive2</div>
+                    <div class="box a" id="page3_img3" style="cursor:pointer;">Responsive3</div>
+                    <div class="box b" id="page3_img4" style="cursor:pointer;">Web</div>
+                    <div class="box c" id="page3_img5" style="cursor:pointer;">Mobile</div>
+                </div>
+            </div>
+            <img class="cloud" src="./img/cloud.png" alt="구름이미지">
+            <img class="cloud2" src="./img/cloud.png" alt="구름이미지">
+        </div>
+        <!------↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓page4↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓---->
+        <div class="section" id="section3">
+            <div class="intro">
+                <h1 style="color: #fff;">CONTACT</h1>
+                <p style="color: #fff;">WEB DESIGNER & WEB PUBLISHER</p>
+                <div id="imglist">
+                    <div class="img1Wrap">
+                        <div id="contact1"><a href="mailto:rjsemffl224@naver.com"><i class="xi-mail"></i></a></div>
+                        <p id="con1">rjsemffl224@naver.com</p>
+                    </div>
+                    <div class="img2Wrap">
+                        <div id="contact2"><a href="tel:010-3100-5310"><i class="xi-mobile"></i></a></div>
+                        <p id="con2">010-3100-5310</p>
+                    </div>
+                </div>
+                <span>아직 부족한 점이 많지만, 성장해 나가는 웹 퍼블리셔가 되겠습니다.<br>끝까지 봐주셔서 감사합니다.<br>: )</span>
+            </div>
+            <img class="around" src="./img/nature2.png" alt="땅이미지">
+            <img class="tree" src="./img/tree.png" alt="나무이미지">
+            <img class="boy" src="./img/boy.png" alt="소년이미지">
+            <img class="cloud" src="./img/cloud.png" alt="구름이미지">
+            <img class="cloud2" src="./img/cloud.png" alt="구름이미지">
+            <div id="footer">
+                <p>COPYRIGHT &copy; 2020 ParkJunSu ALL RIGHTS RESERVED.</p>
+            </div>
+
+        </div>
+
+    </div>
+
+
+</body></html>
